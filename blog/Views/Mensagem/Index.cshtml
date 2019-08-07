@@ -1,0 +1,60 @@
+﻿@model IEnumerable<blog.Models.Mensagem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>BLOGZERA</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataMensagem)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataMensagem)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MensagemId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MensagemId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MensagemId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>*@
+
+@foreach(var item in Model)
+{
+<div>
+    <h1> @Html.DisplayFor(modelItem => item.Titulo)</h1>
+</div>
+<div>
+    <p> @Html.DisplayFor(modelItem => item.Descricao)</p>
+</div>
+<div>
+    <label> @Html.DisplayFor(modelitem =>item.Categoria)</label>
+</div>
+}
